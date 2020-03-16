@@ -11,5 +11,14 @@ spring:
     password: 123456
 
 mybatis:
-  mapperLocation: classpath:mapper/*.xml
+  #mapperLocation: classpath:mapper/*.xml
   type-aliases-package: com.atguigu.springcloud.entities
+
+eureka:
+  client:
+    #向注册中心注册自己
+    register-with-eureka: true
+    #是否从Eureka server抓取已有的注册信息，默认为true，单节点无所谓，但是集群必须设置true才能配合ribbon使用负载均衡
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
