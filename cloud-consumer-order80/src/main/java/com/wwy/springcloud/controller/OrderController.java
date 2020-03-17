@@ -14,8 +14,11 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderController {
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    // 单机打开方式
+    //public static final String PAYMENT_URL = "http://localhost:8001";
 
+    //使用eureka打开方式
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
 
