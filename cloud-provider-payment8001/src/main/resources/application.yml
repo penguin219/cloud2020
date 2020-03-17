@@ -2,7 +2,7 @@ server:
   port: 8001
 spring:
   application:
-    name: cloud-payment-service
+    name: cloud-payment-service #这个名称是微服务注册名称，很重要！
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
@@ -22,3 +22,6 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: payment8001 #不显示主机名称 actuator微服务的自动配置
+    prefer-ip-address: true #访问路径显示ID地址 actuator微服务的自动配置
