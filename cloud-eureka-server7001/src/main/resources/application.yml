@@ -10,9 +10,12 @@ eureka:
     register-with-eureka: false
     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要检索服务
     fetch-registry: false
+
     #设置与eureka server交互的地址 查询和注册服务都需要这个地址
-    #单机设置的地址为自己，但是多机需要相互注册，设置其他机器的地址
-    #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     service-url:
       #互相注册 注册别的地址！
-      defaultZone: http://eureka7002.com:7002/eureka/
+      #defaultZone: http://eureka7002.com:7002/eureka/
+
+      #单机设置的地址为自己，但是多机需要相互注册，设置其他机器的地址
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
