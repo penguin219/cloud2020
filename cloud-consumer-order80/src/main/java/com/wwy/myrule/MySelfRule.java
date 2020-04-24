@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
+ * 修改负载均衡的方式
  * 这个类不能放在component scan注解修饰下的包下
  * 要单独摘出来
  */
