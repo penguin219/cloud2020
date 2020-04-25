@@ -1,0 +1,24 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-sleuth-service #这个名称是微服务注册名称，很重要！
+  zipkin:
+    base-url: http://192.168.1.5:9411
+  sleuth:
+    sampler:
+      #采样率值介于0-1之间，1表示全部采集
+      probability: 1
+
+eureka:
+  client:
+    #向注册中心注册自己
+    register-with-eureka: true
+    #是否从Eureka server抓取已有的注册信息，默认为true，单节点无所谓，但是集群必须设置true才能配合ribbon使用负载均衡
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: sleuth-payment8001 #不显示主机名称 actuator微服务的自动配置
+    prefer-ip-address: true #访问路径显示ID地址 actuator微服务的自动配置
